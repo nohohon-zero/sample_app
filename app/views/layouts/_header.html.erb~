@@ -16,7 +16,7 @@
 					<li><%= link_to "Profile", current_user %></li>
 					<li><%= link_to "Setting", '#' %></li>
 					<li class="diviver"></li>
-					<li><%= link_to "Sign out", signout_path, method: "de;ete" %></li>
+					<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
 				</ul>
 			</li>
 		<% else %>

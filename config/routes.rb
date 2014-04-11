@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   #get "users/new"
   #get "static_pages/home"
   #get "static_pages/help"
@@ -16,6 +17,9 @@ SampleApp::Application.routes.draw do
   # root 'welcome#index'
   root 'static_pages#home'
 
+  #match '/signup', to:'user#new',			via: 'get'
+  match '/signin', to:'sessions#new',		via: 'get'
+  match '/signout', to:'sessions#destroy',	via: 'delete'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
